@@ -4,34 +4,21 @@ void main() {
   runApp(const MyApp());
 }
 
-void test() {
-  var names = { 'John', 'Doe', 'Smith' };
-  names.add('Jane');
-  names.add('John');
-  names.add('Doe');
-  names.add('Smith');
-  print(names);
+enum AnimalType { cat, dog, bird }
 
-  // Map
-  var ages = {
-    'name': 'John',
-    'age': 35,
-    'Height': 40,
-    'Weight': 25
-   }; // Map<String, int>
-  print(ages);
-
-  String? name = null;
-  print(name);
-  name = 'John';
-  print(name);
-
-  const String? fName = null;
-  const String? sName = "Doe";
-  const String? lName = "Smith";
-
-  const firstNotNull = fName ?? sName ?? lName;
-  print(firstNotNull);
+void test(AnimalType animalType) {
+  switch (animalType) {
+    case AnimalType.cat:
+      print('cat');
+      break;
+    case AnimalType.dog:
+      print('dog');
+      break;
+    case AnimalType.bird:
+      print('bird');
+      break;
+  }
+  print(animalType.index);
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -39,7 +26,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    test();
+    test(AnimalType.dog);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
