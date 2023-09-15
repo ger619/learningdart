@@ -4,24 +4,35 @@ void main() {
   runApp(const MyApp());
 }
 
-void test(){
-  final name = 'Rohan';
-  if (name == 'Bob') {
-    print('Bob Won');
-  } else if (name == 'Rohan') {
-    print('Rohan Won');
-  }
-  else {
-    print('No one Won');
-  }
+void test() {
+  var names = { 'John', 'Doe', 'Smith' };
+  names.add('Jane');
+  names.add('John');
+  names.add('Doe');
+  names.add('Smith');
+  print(names);
 
-  var age = 20;
-  print(age);
-  final ageMinusOne = --age;
-  print(age);
-  print(ageMinusOne);
+  // Map
+  var ages = {
+    'name': 'John',
+    'age': 35,
+    'Height': 40,
+    'Weight': 25
+   }; // Map<String, int>
+  print(ages);
+
+  String? name = null;
+  print(name);
+  name = 'John';
+  print(name);
+
+  const String? fName = null;
+  const String? sName = "Doe";
+  const String? lName = "Smith";
+
+  const firstNotNull = fName ?? sName ?? lName;
+  print(firstNotNull);
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
